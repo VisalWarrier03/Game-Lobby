@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two-Player Game Room</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        // Import the functions you need from the SDKs
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+        import { getAuth } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+
+        // Your Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDpALATx72vTNJhTImQSG-J076SNHOwnlQ",
+            authDomain: "cloud-computing-lab-proj-b6fbd.firebaseapp.com",
+            projectId: "cloud-computing-lab-proj-b6fbd",
+            storageBucket: "cloud-computing-lab-proj-b6fbd.appspot.com",
+            messagingSenderId: "794242920811",
+            appId: "1:794242920811:web:66228ff7dad0faa3245c2e",
+            measurementId: "G-C0RL5WX02R"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
+
+        export { db, auth };
+    </script>
+
+    <!-- Main Script -->
+    <script type="module" src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Two-Player Game Room</h1>
+        
+        <!-- Room Creation -->
+        <div class="room-creation">
+            <h2>Create a Room</h2>
+            <input type="text" id="roomName" placeholder="Enter Room Name">
+            <button onclick="createRoom()">Create Room</button>
+            <p id="roomIdMessage"></p>
+        </div>
+
+        <!-- Join a Room -->
+        <div class="room-join">
+            <h2>Join a Room</h2>
+            <input type="text" id="joinRoomId" placeholder="Enter Room ID">
+            <button onclick="joinRoom()">Join Room</button>
+            <p id="joinRoomMessage"></p>
+        </div>
+    </div>
+</body>
+</html>
