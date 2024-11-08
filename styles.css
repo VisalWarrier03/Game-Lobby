@@ -1,0 +1,35 @@
+/* Dark Mode */
+body {
+    background-color: black;
+    color: lightpurple;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+}
+
+input, button {
+    margin: 10px;
+    padding: 10px;
+}
+
+button {
+    background-color: purple;
+    color: white;
+}
+
+/* Light Mode */
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: white;
+        color: green;
+    }
+
+    button {
+        background-color: green;
+        color: white;
+    }
+}
